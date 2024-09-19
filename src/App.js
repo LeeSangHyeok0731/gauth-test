@@ -7,13 +7,13 @@ function useQuery() {
 
 const MyComponent = () => {
   const query = useQuery();
-  
-  // 쿼리 파라미터 추출
-  const paramValue = query.get('paramName'); // 'paramName' 대신 실제 파라미터 키 입력
-  
+
+  // 'code' 파라미터 값 추출
+  const code = query.get('code');
+
   return (
     <div>
-      <h1>Query Parameter Value: {paramValue}</h1>
+      <h1>Code: {code}</h1>
     </div>
   );
 };
