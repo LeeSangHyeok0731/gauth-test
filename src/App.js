@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import LoginButton from './loginBtn';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -11,7 +12,6 @@ const MyComponent = () => {
 
   useEffect(() => {
     if (code) {
-      // 'code' 값을 JSON으로 API에 POST 요청
       const postCode = async () => {
         try {
           const response = await fetch('https://daram-gsm.kro.kr/api/login/gauth/code', {
@@ -36,6 +36,7 @@ const MyComponent = () => {
   return (
     <div>
       <h1>Code: {code}</h1>
+      <LoginButton />
     </div>
   );
 };
